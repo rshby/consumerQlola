@@ -84,8 +84,16 @@ consumer.Received += async (model, ea) =>
 
             response = await _graphQLHttpClient.SendQueryAsync<OverbookingResult>(request);
 
+            // ambil responsenya
+
             Console.WriteLine("result data");
-            Console.WriteLine(JsonConvert.SerializeObject(response));
+            Console.WriteLine(JsonConvert.SerializeObject(response.Data.AbcsOvbInternal));
+            Console.WriteLine();
+
+            // get errors : jika null -> tidak ada error
+            Console.WriteLine("errors");
+            Console.WriteLine(JsonConvert.SerializeObject(response.Errors));
+            Console.WriteLine();
             Console.WriteLine("success send");
         }
         catch (Exception err)

@@ -25,7 +25,7 @@ var testQlola = channel.QueueDeclare("testQlola", true, false, false, null);
 // send message
 var messageBody = new  OverbookingRequest()
 {
-    UniqueId = "rshby1002",
+    UniqueId = "rshby1008",
     TellerId = "0999999",
     Remark = "test dari publisher reo",
     AmountTrx = 2.0,
